@@ -9,6 +9,7 @@ from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
 from homeassistant.helpers import config_validation as cv
+from homeassistant import config_entries
 
 from .const import DOMAIN, CONF_SESSION_ID, CONF_REMEMBER_ME
 from .pandora_client import PandoraClient
@@ -73,4 +74,7 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if unload_ok:
         hass.data[DOMAIN].pop(entry.entry_id)
 
-    return unload_ok 
+    return unload_ok
+
+# Register the config flow
+config_entries.HANDLERS.register(DOMAIN)(ConfigFlow) 
