@@ -35,16 +35,19 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> None:
     # Test the connection by attempting to login
     await hass.async_add_executor_job(client.login)
 
+@config_entries.HANDLERS.register(DOMAIN)
 class ConfigFlow(config_entries.ConfigFlow):
     """Handle a config flow for Pandora for Business."""
 
     VERSION = 1
-    DOMAIN = DOMAIN
 
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
     ) -> FlowResult:
         """Handle the initial step."""
+        if self._async_current_entries():
+            return self.async_abort(reason="single_instance_allowed")
+
         errors: dict[str, str] = {}
 
         if user_input is not None:
