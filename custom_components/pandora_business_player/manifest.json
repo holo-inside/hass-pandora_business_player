@@ -1,0 +1,11 @@
+{
+  "domain": "pandora_business_player",
+  "name": "Pandora for Business",
+  "documentation": "https://github.com/holo-inside/hass-pandora_business_player",
+  "issue_tracker": "https://github.com/holo-inside/hass-pandora_business_player/issues",
+  "dependencies": [],
+  "codeowners": ["@holo-inside"],
+  "requirements": ["aiohttp>=3.8.0"],
+  "iot_class": "cloud_polling",
+  "version": "0.1.9"
+} 

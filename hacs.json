@@ -1,0 +1,6 @@
+{
+    "name": "Pandora for Business",
+    "render_readme": true,
+    "domains": ["media_player"],
+    "homeassistant": "2023.1.0"
+} 
