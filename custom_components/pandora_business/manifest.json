@@ -1,0 +1,18 @@
+{
+  "domain": "pandora_business",
+  "name": "Pandora for Business",
+  "codeowners": [
+    "@holo-inside"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "http"
+  ],
+  "documentation": "https://github.com/holo-inside/hass-pandora_business_player",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/holo-inside/hass-pandora_business_player/issues",
+  "requirements": [
+  ],
+  "version": "v0.1.10"
+}
